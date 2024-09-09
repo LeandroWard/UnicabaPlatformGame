@@ -18,15 +18,13 @@ public class NewBehaviourScript : MonoBehaviour
     }
 
 
-        void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.contacts.Length > 0 && collision.contacts[0].normal.y > 0.01f)
-            {
-                isGrounded = true;
-            }
-        }
 
-        void OnCollisionExit2D(Collision2D collision)
+    void OnTriggerEnter2D()
+    {
+
+            isGrounded = true;
+    }
+    void OnTriggerExit2D()
         {
             isGrounded = false;
         }
